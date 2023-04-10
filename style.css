@@ -1,0 +1,166 @@
+:root { 
+    /* Primary */
+    --Very-dark-blue:               hsl(233, 47%, 7%);          /* (main background) */
+    --Dark-desaturated-blue:        hsl(244, 38%, 16%);         /* (card background) */
+    --Soft-violet:                  hsl(277, 64%, 61%);         /* (accent) */
+
+    /* Neutral */
+    --White:                        hsl(0, 0%, 100%);           /* (main heading, stats) */
+    --Slightly-transparent-white-1: hsla(0, 0%, 100%, 0.75);    /* (main paragraph) */
+    --Slightly-transparent-white-2: hsla(0, 0%, 100%, 0.6);     /* (stat headings) */
+}
+
+/* Global Style ------------------------------------------------------------------ */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    background-color: var(--Very-dark-blue);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card ------------------------------------------------------------------ */
+.card {
+    margin: 2rem 1.5rem;
+    border-radius: .5rem;
+
+    overflow: hidden;
+    background-color: var(--Dark-desaturated-blue);
+}
+@media (min-width: 1100px) {
+    .card {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 3rem;
+    }
+}
+
+/* Image Div Stayle ------------------------------------------------------------------ */
+.card .img-div {
+    background: var(--Soft-violet);
+}
+@media (min-width: 1100px) {
+    .card .img-div {
+        min-width: 33rem;
+    }
+}
+
+/* All Images */
+.card .img-div img{
+    opacity: .4;
+}
+
+/* Desktop And Mobile Image */
+.card .img-div .desktop-img {
+    display: none;
+}
+@media (min-width: 600px) {
+    .card .img-div .mobile-img {
+        display: none;
+    }
+    .card .img-div .desktop-img {
+        display: block;
+    }
+}
+
+/* Content And List ------------------------------------------------------------------ */
+.card .content-and-list {
+    padding: 1.5rem;
+    max-width: 30rem;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+@media (min-width: 600px) {
+    .card .content-and-list {
+        text-align: left;
+        padding: 4.5rem;
+        justify-content: space-between;
+    }
+}
+
+/* Content => ------------------------------------------------------------------ */
+/* ---(control)--> Header And Paragraph */
+.card .content {
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    gap: 1rem;
+}
+@media (min-width: 600px) {
+    .card .content {
+        gap: 2rem;
+    }
+}
+
+/* Content ---(control)--> Header */
+.card .content .header {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--White);
+}
+.card .content .header span{
+    color: var(--Soft-violet);
+}
+
+/* Content ---(control)--> Paragraph */
+.card .content .paragraph {
+    font-weight: 500;
+    line-height: 1.5rem;
+    color: var(--Slightly-transparent-white-1);
+}
+
+/* List ------------------------------------------------------------------ */
+/* ---(control)--> All <li> */
+.card .list {
+    text-transform: uppercase;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+@media (min-width: 600px) {
+    .card .list {
+        flex-direction: row;
+        gap: 3rem;
+    }
+}
+
+/* All <li> ---(control)--> "Numbers" And "Text" */
+.card .list li {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+/* All "Numbers" */
+.card .list .number {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--White);
+}
+
+/* All "Text" */
+.card .list .text {
+    font-family: 'Inter', sans-serif;
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--Slightly-transparent-white-2);
+}
